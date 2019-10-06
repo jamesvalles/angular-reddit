@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import {Article} from '../app/article/article.model'
+import {AppComponent} from '../app/app.component'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class FlagArticleService {
   constructor() { }
 
   lowestVote(article : Article) : void{
-    article.votes = 0; 
-    console.log("Service activated")
+    console.log("Getting lowest vote.");
+    var appComp = new AppComponent(); 
+    appComp.updateArticles(article);
   }
 }
