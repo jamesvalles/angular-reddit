@@ -6,6 +6,7 @@ import {
   enableProdMode
 } from '@angular/core';
 import { Article } from './article.model'; // <-- added
+import {FlagArticleService} from '../flag-article.service'
 
 @Component({
   selector: 'app-article',
@@ -16,7 +17,7 @@ export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
 
-  constructor() {
+  constructor(public _flagArticle : FlagArticleService) {
     // article is populated by the Input now,
     // so we don't need anything here
   }
@@ -34,7 +35,8 @@ export class ArticleComponent implements OnInit {
   }
 
   flagArticle(): boolean{
-    console.log("Article flagged.");
+    console.log("Article flagged");
+    this._flagArticle.lowestVote();
     return false;
   }
 

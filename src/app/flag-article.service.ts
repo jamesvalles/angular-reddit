@@ -7,7 +7,7 @@ export class FlagArticleService {
 
   constructor() { }
 
-  lowestVote(){
-    
+  lowestVote() : void{
+    console.log("Service activated")
   }
 }
