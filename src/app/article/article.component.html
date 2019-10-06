@@ -26,5 +26,11 @@
         downvote
       </a>
     </li>
+    <li class="item" *ngIf = "article.role == 'administrator'" > 
+      <a href (click)="voteDown()">
+        <i class="arrow down icon"></i>
+        flag
+      </a>
+    </li>
   </ul>
 </div>
