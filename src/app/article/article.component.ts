@@ -2,7 +2,8 @@ import {
   Component,
   OnInit,
   Input,        // <-- added,
-  HostBinding
+  HostBinding,
+  enableProdMode
 } from '@angular/core';
 import { Article } from './article.model'; // <-- added
 
@@ -21,12 +22,20 @@ export class ArticleComponent implements OnInit {
   }
 
   voteUp(): boolean {
+    console.log("Voted up.")
     this.article.voteUp();
     return false;
   }
 
   voteDown(): boolean {
+    console.log("Voted down.")
     this.article.voteDown();
+    return false;
+  }
+
+  flagArticle(): boolean{
+    console.log("Article flagged.");
+    this.article.flagArticle;
     return false;
   }
 
