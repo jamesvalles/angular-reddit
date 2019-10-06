@@ -19,9 +19,7 @@ export class Article {
     this.votes -= 1;
   }
 
-  flagArticle(): void{
-    console.log("Inside Article flagged.")
-  }
+
 
   // domain() is a utility function that extracts
   // the domain from a URL, which we'll explain shortly

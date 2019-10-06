@@ -35,7 +35,6 @@ export class ArticleComponent implements OnInit {
 
   flagArticle(): boolean{
     console.log("Article flagged.");
-    this.article.flagArticle;
     return false;
   }
 
