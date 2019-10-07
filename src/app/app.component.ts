@@ -12,8 +12,10 @@ export class AppComponent {
   
   constructor() {
     this.articles = [
+      new Article('BBC', 'http://bbc.com', "administrator", 10),
       new Article('Angular', 'http://angular.io', "user", 3),
       new Article('Fullstack', 'http://fullstack.io', "administrator", 2),
+      new Article('Techy Minute', 'http://techyminute.com', "user", 6),
       new Article('Angular Homepage', 'http://angular.io', "user", 1)
     ];
   }
@@ -35,9 +37,8 @@ export class AppComponent {
     this.article.votes = 0;
     for(var i = 0; i < this.articles.length; i++){
       console.log(this.articles[i].votes);
-
     }
-    console.log("updated articles in app comppnent");
+    console.log("Updated articles in app comppnent");
 
   }
 }

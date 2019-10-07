@@ -10,7 +10,7 @@ export class FlagArticleService {
   constructor() { }
 
   lowestVote(article : Article) : void{
-    console.log("Getting lowest vote.");
+    console.log("Flag article service invoked.");
     var appComp = new AppComponent(); 
     appComp.updateArticles(article);
   }

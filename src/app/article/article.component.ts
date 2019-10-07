@@ -35,7 +35,7 @@ export class ArticleComponent implements OnInit {
   }
 
   flagArticle(): boolean{
-    console.log("Article flagged");
+    console.log("Article flagged button pressed.");
     this._flagArticle.lowestVote(this.article);
     return false;
   }
