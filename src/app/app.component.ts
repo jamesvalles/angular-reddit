@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Article } from './article/article.model';
+import { FlagArticleService } from './flag-article.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Article } from './article/article.model';
 export class AppComponent {
   articles: Article[];
   article: Article;
-  
+
   constructor() {
     this.articles = [
       new Article('BBC', 'http://bbc.com', "administrator", 10),
@@ -32,13 +33,10 @@ export class AppComponent {
     return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
   }
 
-  updateArticles(article : Article) : void{
+  updateArticles(article : Article){
+    console.log("Updated articles in app comppnent");
     this.article = article;
     this.article.votes = 0;
-    for(var i = 0; i < this.articles.length; i++){
-      console.log(this.articles[i].votes);
-    }
-    console.log("Updated articles in app comppnent");
-
+    return this.article
   }
 }

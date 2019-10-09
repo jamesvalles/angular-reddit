@@ -25,12 +25,14 @@ export class ArticleComponent implements OnInit {
   voteUp(): boolean {
     console.log("Voted up.")
     this.article.voteUp();
+    this._flagArticle.updateCount(this.article);
     return false;
   }
 
   voteDown(): boolean {
     console.log("Voted down.")
     this.article.voteDown();
+    this._flagArticle.updateCount(this.article);
     return false;
   }
 
